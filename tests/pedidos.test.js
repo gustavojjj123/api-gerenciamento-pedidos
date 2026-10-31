@@ -46,6 +46,30 @@ describe('API de gerenciamento de pedidos', () => {
     expect(resposta.status).toBe(400);
   });
 
+  test('POST deve rejeitar tipo de pedido inválido', async () => {
+  const resposta = await request(app)
+    .post('/pedidos')
+    .send({ ...pedidoValido, tipo: 'delivery' });
+
+  expect(resposta.status).toBe(400);
+});
+
+test('POST deve rejeitar prioridade inválida', async () => {
+  const resposta = await request(app)
+    .post('/pedidos')
+    .send({ ...pedidoValido, prioridade: 'urgente' });
+
+  expect(resposta.status).toBe(400);
+});
+
+test('POST deve rejeitar valor enviado como texto', async () => {
+  const resposta = await request(app)
+    .post('/pedidos')
+    .send({ ...pedidoValido, valor: '350' });
+
+  expect(resposta.status).toBe(400);
+});
+
   test('GET /pedidos deve listar os pedidos cadastrados', async () => {
     await request(app).post('/pedidos').send(pedidoValido);
 

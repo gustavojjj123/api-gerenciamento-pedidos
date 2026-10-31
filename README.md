@@ -159,15 +159,26 @@ Salve capturas reais do Postman na pasta `evidencias/`, mostrando método, URL, 
 5. `05-atualizacao.png` — PATCH válido com resposta 200.
 
 As imagens devem ser capturadas após executar as requisições de verdade. Não são incluídas capturas simuladas.
+## Integração contínua (GitHub Actions)
+
+O projeto utiliza GitHub Actions para executar automaticamente os testes da API.
+
+O workflow é acionado quando ocorre:
+- Envio de alterações (push) para a branch main.
+- Abertura de Pull Requests para a branch main.
+
+Etapas executadas:
+1. Baixar o código do repositório.
+2. Configurar o Node.js.
+3. Instalar as dependências com npm ci.
+4. Executar os testes automatizados com npm test.
+
+A execução confirma se as alterações mantêm os testes funcionando corretamente.
 
 ## Git e GitHub
 
-Depois de conferir os arquivos e executar os testes, crie o repositório no GitHub e faça commits reais durante o desenvolvimento. Uma sequência possível:
+O projeto é versionado utilizando Git e hospedado no GitHub.
 
-1. `chore: iniciar estrutura do projeto`
-2. `feat: criar rotas e cadastro de pedidos`
-3. `feat: adicionar consulta e atualização de status`
-4. `test: adicionar testes automatizados`
-5. `docs: documentar API e coleção do Postman`
+As alterações são registradas por meio de commits, permitindo acompanhar o histórico de desenvolvimento.
 
-Não envie a pasta `node_modules` para o GitHub.
+A pasta node_modules não deve ser enviada ao repositório.
