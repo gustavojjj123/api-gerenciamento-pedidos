@@ -182,3 +182,20 @@ O projeto é versionado utilizando Git e hospedado no GitHub.
 As alterações são registradas por meio de commits, permitindo acompanhar o histórico de desenvolvimento.
 
 A pasta node_modules não deve ser enviada ao repositório.
+
+## Uso de IA
+
+Foi utilizada inteligência artificial como ferramenta de apoio durante o desenvolvimento do projeto.
+
+O auxílio foi utilizado nas seguintes atividades:
+
+- Organização da arquitetura em camadas.
+- Apoio na implementação das validações e regras de negócio.
+- Elaboração e revisão dos testes automatizados.
+- Organização da documentação e configuração do GitHub Actions.
+
+Uma sugestão aceita foi a utilização de Jest e Supertest para automatizar os testes da API, permitindo verificar o funcionamento dos endpoints e identificar possíveis falhas durante o desenvolvimento.
+
+Também foi utilizada a integração com GitHub Actions para automatizar a execução dos testes a cada atualização do repositório.
+
+Todo o código foi executado e testado para verificar seu funcionamento.
